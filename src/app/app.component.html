@@ -1,0 +1,26 @@
+<!-- <select [name]="'test'" id="" [(ngModel)]="selectedValue" (change)="onOptionSelect($event)">
+  <option *ngFor="let option of options"  [value]="option.value">
+    {{ option.label }}
+  </option>
+</select> -->
+<!-- first part  -->
+<input type="text" [(ngModel)]="title2" />
+<h2>{{ title2 }}</h2>
+<h3>{{ text }}</h3>
+<div class="center card">
+  <div *ngFor="let option of options" class="card">
+    <div [ngClass]="{ hide: !(option.value % 2 !== 0) }">
+      {{ option.value }}
+    </div>
+  </div>
+</div>
+
+<!-- second part  -->
+<div class="container">
+  <app-test [subTitle]="title2"></app-test>
+  <app-child2
+    (clickEvent)="dataFromChild2($event)"
+    class="bg-red"
+    [subTitle]="title2"
+  ></app-child2>
+</div>
